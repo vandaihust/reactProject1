@@ -14,10 +14,14 @@ class ColorPicker extends Component {
                 size: this.props.size+2
             });   
             console.log(this.props.size+2);
+            this.props.onReceiveSize(this.props.size+2)
         } else {
             alert("Max size")
+            this.setState({
+                size: this.props.size-2
+            }); 
         }
-        this.props.onReceiveSize(this.props.size+2)
+        
        
     }
   
@@ -28,10 +32,14 @@ class ColorPicker extends Component {
                 size: this.props.size-2
             });
             console.log(this.props.size-2);
+            this.props.onReceiveSize(this.props.size-2)
         } else {
             alert("Min size")
+            this.setState({
+                size: this.props.size+2
+            }); 
         }
-        this.props.onReceiveSize(this.props.size-2)
+        
        
     }
     render() {
